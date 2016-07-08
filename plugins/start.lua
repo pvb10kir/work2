@@ -31,19 +31,10 @@ end
 local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
-    	{
-    		{text = 'Bl/Sp Channel - کانال', callback_data = '!channel'},
-	    },
-		{
-	        {text = '🔩پیام رسان - Private🔥', callback_data = '/chat'},
+    {
+	        {text = '🔩پیام رسان🔥', callback_data = '/chat'},
         },
-		{
-	        {text = '🔮About - درباره📼', callback_data = '!aboutus'},
-        },
-	    {
-	        {text = '🔮Sphero Ab🔨', callback_data = '!robot'},
-        }
-    }
+}
     return keyboard
 end
 
@@ -130,14 +121,14 @@ end
 return {
 	action = action,
 	triggers = {
-	    '^/(start)@Sphero_Bot$',
+	    '^/(start)$',
 	    '^/(start)$',
 	    '^/(help)$',
 	    '^###cb:!(home)',
---		'^###cb:!(buygroup)',
-	 --   '^###cb:!(channel)',
-	  --  '^###cb:!(robot)',
-	  --  '^###cb:!(share)',
+'^###cb:!(buygroup)',
+	   '^###cb:!(channel)',
+	    '^###cb:!(robot)',
+	    '^###cb:!(share)',
 
     }
 }

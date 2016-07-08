@@ -134,10 +134,10 @@ return {
 	    '^/(start)$',
 	    '^/(help)$',
 	    '^###cb:!(home)',
-		'^###cb:!(buygroup)',
-	    '^###cb:!(channel)',
-	    '^###cb:!(robot)',
-	    '^###cb:!(share)',
+--		'^###cb:!(buygroup)',
+	 --   '^###cb:!(channel)',
+	  --  '^###cb:!(robot)',
+	  --  '^###cb:!(share)',
 
     }
 }

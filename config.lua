@@ -1,6 +1,6 @@
 return {
-	bot_api_key = '234164681:AAEoLQltAsGrEedHhruQLUKXbcY8dEw7tN4',
-	admin = 85831686, 
+	bot_api_key = '232459117:AAGOIxuw_xf-wLpOYE3F9NYLBokoLDo8fNw',
+	admin = 216426525, 
 	channel = '@spheroch', --channel username with the '@'
 
 	plugins = {

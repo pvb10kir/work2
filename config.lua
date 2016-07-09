@@ -1,5 +1,5 @@
 return {
-	bot_api_key = '232459117:AAEGwLKB_UF8YmkRThFTiD040MrxbYGtD3s',
+	bot_api_key = '236905449:AAFyIEwPJZ5GnMWHTEqyd0_8bgmmh-cm7DU',
 	admin = 216426525, 
 	channel = '@spheroch', --channel username with the '@'
 

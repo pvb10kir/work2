@@ -32,7 +32,7 @@ local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
     {
-	        {text = '🔩پیام رسان🔥', callback_data = '/chat'},
+	        {text = '🔥برای پیام رسانی کلیک کنید🔮', callback_data = '/chat'},
         },
 }
     return keyboard
@@ -70,8 +70,7 @@ local action = function(msg, blocks, ln)
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = [[*📍Hi and Welcome*
-_Use one_ :D]]
+            local message = [[📍برای پیام رسانی اینجا بزنید👇]]
             local keyboard = do_keyboard_private()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end

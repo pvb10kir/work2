@@ -17,7 +17,7 @@ if chat_info == 'block' then
  api.sendMessage(msg.chat.id, '_You are Blocked_ *Miss Message* :D', true) 
 else
  db:hset(hash, user_id, 'true')
- api.sendMessage(msg.chat.id, '*Chat Started!*\n_Now You all message Send to_ @Dragon_Black', true) 
+ api.sendMessage(msg.chat.id, '*Chat Started!*\n_Now You all message Send to Me', true) 
  end
  end
 if blocks[1] == 'end' then

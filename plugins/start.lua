@@ -34,6 +34,12 @@ local function do_keyboard_private()
     {
 	        {text = '🔥برای پیام رسانی کلیک کنید🔮', callback_data = '/chat'},
         },
+  {
+	        {text = '🔥شماره سازنده🔮', callback_data = '!share'},
+        },
+{
+	        {text = '🔥ایدی های فروشی🔮', callback_data = '!channel'},
+        },
 }
     return keyboard
 end
@@ -51,14 +57,14 @@ local function do_keyboard_channel()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Fa/En Sp Channel 🇬🇧🇮🇷', url = 'https://telegram.me/SpheroCh'},
+    		{text = 'mobina Khoshgele', url = 'https://telegram.me/Mobina_Khoshgele'},
 	    },
 	{
-	        		{text = 'BlackLife Channel ', url = 'https://telegram.me/BlackLifeCh'},
+	        		{text = 'Da3sHacker', url = 'https://telegram.me/Da3shacker'},
 
     },
 		{
-	    {text = '🔙Back', callback_data = '!home'},
+	    {text = '🔙Home', callback_data = '!home'},
         }
     
     }
@@ -85,7 +91,7 @@ local action = function(msg, blocks, ln)
         local msg_id = msg.message_id
         local text
         if query == 'channel' then
-            local text = '*Sphero/Bl Channel*'
+            local text = 'ایدی های فروشی💎'
             local keyboard = do_keyboard_channel()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
@@ -104,14 +110,13 @@ if query == 'buygroup' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'home' then
-            local text = [[📍*Welcome Back To Home*
-Sphero Official 🔥
-🔧Use One By One🔧]]
+            local text = [[*Welcome Back To Home*
+*UnknoWnCyber Official Bot 🔥*]]
             local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
-     api.sendContact(msg.from.id, '+639080452513', '🔸Sphero')
+     api.sendContact(msg.from.id, '+6288972856572', '🔸Unknown Cyber')
 end
     end
 

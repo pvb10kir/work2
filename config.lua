@@ -1,7 +1,7 @@
 return {
-	bot_api_key = '251692551:AAHpyJm76UFg9V277FabPUt5uv08vfxI66w',
-	admin = 197321068, 
-	channel = '@spheroch', --channel username with the '@'
+	bot_api_key = '301028916:AAGWneYkNBRnpOoz26dDfkjwOvc9nDLymgY',
+	admin = 255317894, 
+	channel = '@sphero_ch', --channel username with the '@'
 
 	plugins = {
 		'start.lua','aboutus.lua','contactus.lua',

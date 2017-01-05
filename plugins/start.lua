@@ -35,12 +35,8 @@ local function do_keyboard_private()
 	        {text = '🔥برای پیام رسانی کلیک کنید🔮', callback_data = '/chat'},
         },
   {
-	        {text = '🔥شماره سازنده🔮', callback_data = '!share'},
+	        {text = '🔥شماره بنده🔮', callback_data = '!share'},
         },
-{
-	        {text = '🔥ایدی های فروشی🔮', callback_data = '!channel'},
-        },
-}
     return keyboard
 end
 
@@ -116,7 +112,7 @@ if query == 'home' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
-     api.sendContact(msg.from.id, '+6288972856572', '🔸Unknown Cyber')
+     api.sendContact(msg.from.id, '+989309649221', '🔸سپهر.MrBlackLife')
 end
     end
 

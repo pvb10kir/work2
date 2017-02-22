@@ -37,9 +37,9 @@ local function do_keyboard_private()
   {
 	        {text = '🔥شماره بنده🔮', callback_data = '!share'},
         },
-		{
+	--[[	{
 				{text = '�برای خرید ربات کلیک کنید�', url = 'https://telegram.me/sphero_ch'},
-	    },
+	    },]]
 	}		
     return keyboard
 end
@@ -116,7 +116,7 @@ if query == 'home' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
-     api.sendContact(msg.from.id, '+989309649221', '🔸سپهر.MrBlackLife')
+     api.sendContact(msg.from.id, '+18642140656', '🔸AmirHOssein')
 end
     end
 

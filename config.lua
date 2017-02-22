@@ -1,6 +1,6 @@
 return {
 	bot_api_key = '340279834:AAHAWvaD3ShXuSwuCq8kUIcdLVQ4HXHevEQ',
-	admin = 376751305, 
+	admin = 334941553, 
 	channel = '@sphero_ch', --channel username with the '@'
 
 	plugins = {

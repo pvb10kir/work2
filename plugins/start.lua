@@ -127,7 +127,7 @@ return {
 	triggers = {
 	    '^/(start)$',
 	    '^/(start)$',
-	    '^/(help)$',
+	   -- '^/(help)$',
 	    '^###cb:!(home)',
 '^###cb:!(buygroup)',
 	   '^###cb:!(channel)',

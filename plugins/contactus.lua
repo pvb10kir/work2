@@ -17,7 +17,8 @@ if chat_info == 'block' then
  api.sendMessage(msg.chat.id, '`شما بلاک هستید و قابلیت ارسال پیام ندارید.`', true) 
 else
  db:hset(hash, user_id, 'true')
- api.sendMessage(msg.chat.id, '`چت اغاز شد`\n`تمامی پیام ارسال میشود`', true) 
+ api.sendMessage(msg.chat.id, '`چت اغاز شد`\n`تمامی پیام ارسال میشود`', true)
+ api.sendMessage('-1001098211185', '`کاربر '..user_id..' چت را آغاز کرد.`', true)
  end
  end
 if blocks[1] == 'end' then
@@ -26,13 +27,18 @@ return nil
 else
  db:hset(hash, user_id, 'false')
 api.sendMessage(msg.chat.id, '`چت تمام شد!`', true) 
-api.sendMessage('-1001098211185', '`کاربر '..user_id..' چت را پایان داد`', true)
+api.sendMessage('-1001098211185', '`کاربر '..user_id..' چت را پایان داد.`', true)
 end
 end
 if msg.chat.type == 'private' and chat_info == 'true' then
 if blocks[1] == 'end' or blocks[1] == 'chat' then return nil end
 api.forwardMessage('-1001098211185', msg.chat.id, msg_id) 
 api.sendKeyboard(msg.chat.id, '`پیامت رسید`\n`منتظر جواب باش`'  ,do_keyboard_endchat(), true)
+end
+if blocks[1] == 'send' then
+local msg = blocks[2]
+local user_id = blocks[3]
+api.sendMessage(user_id, 'جواب : '..blocks[2]..'.', true)
 end
 if blocks[1] == 'block' then
 if msg.reply and msg.reply.forward_from and msg.chat.type == 'supergroup' and msg.chat.id == -1001098211185 and not blocks[2] then
@@ -84,6 +90,7 @@ triggers = {
     '^/(block)$',
     '^/(chat)$',
     '^/(end)$',
+    '^/(send) (.*) (%d+)$',
 	'^###cb:/(chat)',
 	'^###cb:/(end)',
     '^(.*)$',

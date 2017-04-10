@@ -26,7 +26,7 @@ return nil
 else
  db:hset(hash, user_id, 'false')
 api.sendMessage(msg.chat.id, '`چت تمام شد!`', true) 
-api.sendMessage('1001098211185', '`کاربر '..user_id..' چت را پایان داد`', true)
+api.sendMessage('-1001098211185', '`کاربر '..user_id..' چت را پایان داد`', true)
 end
 end
 if msg.chat.type == 'private' and chat_info == 'true' then

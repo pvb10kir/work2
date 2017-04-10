@@ -56,6 +56,24 @@ local user_id = blocks[3]
 api.sendMessage(user_id, 'پیام  : '..blocks[2]..'', true)
 api.sendMessage('-1001098211185', 'ارسال شد!', true)
 end
+if blocks[1] == 'help' and msg.chat.type == 'supergroup' and msg.chat.id == -1001098211185 then
+local text = [[Hi 
+		*** Bot Admins Help ***
+*/block reply|userid
+بلاک کردن فرد مورد نظر
+----------------------
+/unblock reply|userid
+خارج کردن از بلاک
+----------------------
+/chatwith userid
+اغاز چت با فرد مورد نظر
+----------------------
+/send pm userid
+فرستادن یک پیام به شخص مورد نظر
+----------------------
+GOODLUCK*]]
+api.sendMessage(msg.chat.id, text, true)
+end
 if blocks[1] == 'block' then
 if msg.reply and msg.reply.forward_from and msg.chat.type == 'supergroup' and msg.chat.id == -1001098211185 and not blocks[2] then
 msg = msg.reply

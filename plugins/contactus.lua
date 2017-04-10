@@ -11,7 +11,7 @@ local function do_keyboard_chatwith()
  local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🔚پایان چت', callback_data = '/endc'}
+    		{text = '🔚پایان چت', callback_data = '/end'}
 	    }
     }
     return keyboard
@@ -106,8 +106,6 @@ triggers = {
     '^/(block)$',
     '^/(chat)$',
     '^/(end)$',
-	'^/(endc)$',
-	'^###cb:/(endc)$',
     '^/(send) (.*) (%d+)$',
 	'^/(chatwith) (%d+)$',
 	'^###cb:/(chat)',

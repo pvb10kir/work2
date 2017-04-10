@@ -118,11 +118,12 @@ end
 if db:get("share:"..msg.chat.id) then
     local wtf = db:ttl("share:"..msg.chat.id)
  api.sendMessage(msg.chat.id, 'شما به تازگی شماره دریافت کرده اید\n*'..wtf..'* ثانیه دیگر امتحان کنید.', true)
-end
+else
 db:setex("share:"..msg.chat.id, 60, 'true')
         if query == 'share' then
      api.sendContact(msg.from.id, '+989309649221', '🔸~[S]epehr')
 end
+			end
     end
 
 end

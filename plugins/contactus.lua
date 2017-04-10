@@ -28,7 +28,7 @@ if chat_info == 'block' then
 end
    if db:get("chat:"..msg.chat.id) then
     local wtf = db:ttl("chat:"..msg.chat.id)
- api.sendMessage(msg.chat.id, 'شما به تازگی چت ایجاد کرده اید\n*"..wtf.."* ثانیه دیگر امتحان کنید.', true)
+ api.sendMessage(msg.chat.id, 'شما به تازگی چت ایجاد کرده اید\n*'..wtf..'* ثانیه دیگر امتحان کنید.', true)
 else
 db:setex("chat:"..msg.chat.id, 60, 'true')
 db:hset(hash, user_id, 'true')

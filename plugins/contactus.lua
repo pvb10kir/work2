@@ -1,4 +1,4 @@
-﻿local function do_keyboard_endchat()
+local function do_keyboard_endchat()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
@@ -39,7 +39,7 @@ if blocks[1] == 'send' then
 local msg = blocks[2]
 local user_id = blocks[3]
 api.sendMessage(user_id, 'پیام  : '..blocks[2]..'.', true)
-api.sendMessage(msg.chat.id, 'ارسال شد!', true)
+api.sendMessage('-1001098211185', 'ارسال شد!', true)
 end
 if blocks[1] == 'block' then
 if msg.reply and msg.reply.forward_from and msg.chat.type == 'supergroup' and msg.chat.id == -1001098211185 and not blocks[2] then

@@ -38,7 +38,7 @@ end
 if blocks[1] == 'send' then
 local msg = blocks[2]
 local user_id = blocks[3]
-api.sendMessage(user_id, 'پیام  : '..blocks[2]..'.', true)
+api.sendMessage(user_id, 'پیام  : '..blocks[2]..'', true)
 api.sendMessage('-1001098211185', 'ارسال شد!', true)
 end
 if blocks[1] == 'block' then

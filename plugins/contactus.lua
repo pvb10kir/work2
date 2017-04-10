@@ -7,6 +7,16 @@ local function do_keyboard_endchat()
     }
     return keyboard
 end
+local function do_keyboard_chatwith()
+ local keyboard = {}
+    keyboard.inline_keyboard = {
+    	{
+    		{text = '🔚پایان چت', callback_data = '/endc'}
+	    }
+    }
+    return keyboard
+end
+
 local action = function(msg,blocks, ln)
 local msg_id = msg.message_id
 local user_id = msg.chat.id
@@ -21,6 +31,11 @@ else
  api.sendMessage('-1001098211185', '`کاربر '..user_id..' چت را آغاز کرد.`', true)
  end
  end
+if blocks[1] == 'chatwith' then
+	db:hset(hash, blocks[2], 'true')
+	api.sendKeyboard(blocks[2], '`چت اغاز شد`\n`به دستور ادمین ربات چتی با شما آغاز شد برای ادامه چت پیام خود را تایپ کنید و برای خروج روی دکمه زیر بزنید.`'  ,do_keyboard_chatwith(), true)
+ api.sendMessage('-1001098211185', 'چت با '..blocks[2]..' .آغاز شد', true)
+ end	
 if blocks[1] == 'end' then
 if chat_info == 'block' or chat_info == 'false' then 
 return nil 
@@ -91,7 +106,10 @@ triggers = {
     '^/(block)$',
     '^/(chat)$',
     '^/(end)$',
+	'^/(endc)$',
+	'^###cb:/(endc)$',
     '^/(send) (.*) (%d+)$',
+	'^/(chatwith) (%d+)$',
 	'^###cb:/(chat)',
 	'^###cb:/(end)',
     '^(.*)$',

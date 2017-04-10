@@ -116,7 +116,7 @@ if query == 'home' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
-     api.sendContact(msg.from.id, '+18642140656', '🔸AmirHOssein')
+     api.sendContact(msg.from.id, '+989309649221', '🔸~[S]epehr')
 end
     end
 

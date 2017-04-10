@@ -123,6 +123,7 @@ triggers = {
     '^/(unblock)$',
     '^/(block)$',
     '^/(chat)$',
+	'^/(help)$',
     '^/(end)$',
     '^/(send) (.*) (%d+)$',
 	'^/(chatwith) (%d+)$',

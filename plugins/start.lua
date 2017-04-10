@@ -115,6 +115,11 @@ if query == 'home' then
             local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
+if db:get("share:"..msg.chat.id) then
+    local wtf = db:ttl("share:"..msg.chat.id)
+ api.sendMessage(msg.chat.id, 'شما به تازگی شماره دریافت کرده اید\n*'..wtf..'* ثانیه دیگر امتحان کنید.', true)
+end
+db:setex("share:"..msg.chat.id, 60, 'true')
         if query == 'share' then
      api.sendContact(msg.from.id, '+989309649221', '🔸~[S]epehr')
 end

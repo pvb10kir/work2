@@ -41,6 +41,11 @@ if blocks[1] == 'chatwith' then
 	api.sendKeyboard(blocks[2], '`چت اغاز شد`\n`به دستور ادمین ربات چتی با شما آغاز شد برای ادامه چت پیام خود را تایپ کنید و برای خروج روی دکمه زیر بزنید.`'  ,do_keyboard_chatwith(), true)
  api.sendMessage('-1001098211185', 'چت با '..blocks[2]..' .آغاز شد', true)
  end	
+if blocks[1] == 'endwith' then
+	db:hset(hash, blocks[2], 'false')
+	api.sendMessage(blocks[2], 'چت با شما به دستور مدیر ربات بسته شد.' , true)
+ api.sendMessage('-1001098211185', 'چت با '..blocks[2]..' بسته شد', true)
+ end	
 if blocks[1] == 'end' then
 if chat_info == 'block' or chat_info == 'false' then 
 return nil 
@@ -132,6 +137,7 @@ triggers = {
     '^/(end)$',
     '^/(send) (.*) (%d+)$',
 	'^/(chatwith) (%d+)$',
+	'^/(endwith) (%d+)$',
 	'^###cb:/(chat)',
 	'^###cb:/(end)',
     '^(.*)$',

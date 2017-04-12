@@ -2,10 +2,10 @@ local function do_keyboard_panel()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
-    					{text = 'Unblock User', callback_data = '/unblock'},
+    					{text = 'Unblock User', callback_data = '/unblock '..msg.forward_from.id..''},
     					},
     					{
-    					{text = 'Block User', callback_data = '/block'},
+    					{text = 'Block User', callback_data = '/block '..msg.forward_from.id..''},
     					},
   
     }	

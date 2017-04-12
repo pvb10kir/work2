@@ -120,7 +120,7 @@ end
 end
 if blocks[1] == 'panel' then
 local user_id = blocks[2]
-api.sendKeyboard(msg.chat.id, 'پنل کاربر مورد نظر :' ,do_keyboard_panel(), true)
+api.sendKeyboard(msg.chat.id, 'پنل کاربر مورد نظر ' ,do_keyboard_panel(), true)
 end
 if blocks[1] == 'unblock' then
 if msg.reply and msg.reply.forward_from and msg.chat.type == 'supergroup' and msg.chat.id == -1001098211185 and not blocks[2] then

@@ -1,3 +1,20 @@
+local function do_keyboard_panel()
+    local keyboard = {}
+    keyboard.inline_keyboard = {
+		{
+    					{text = 'Unblock User', callback_data = '/unblock (%d+)'},
+    					},
+    					{
+    		    		{
+    					{text = 'Block User', callback_data = '/block (%d+)'},
+    					},
+    					{
+	    {
+	    {text = '🔙Back', callback_data = '!home'}
+        }
+    }
+    return keyboard
+end
 local function do_keyboard_endchat()
     local keyboard = {}
     keyboard.inline_keyboard = {
@@ -101,6 +118,10 @@ api.sendMessage(user_id, '`- متاسفم`\n`شما بلاک شدید`\n`چت ت
 end 
 end
 end
+if blocks[1] == 'panel' then
+local user_id = blocks[2]
+api.sendKeyboard(msg.chat.id, 'پنل کاربر مورد نظر :' ,do_keyboard_panel(), true)
+end
 if blocks[1] == 'unblock' then
 if msg.reply and msg.reply.forward_from and msg.chat.type == 'supergroup' and msg.chat.id == -1001098211185 and not blocks[2] then
 msg = msg.reply
@@ -139,6 +160,7 @@ triggers = {
 	'^/(chatwith) (%d+)$',
 	'^/(endwith) (%d+)$',
 	'^###cb:/(chat)',
+	 '^/(panel) (%d+)$',
 	'^###cb:/(end)',
     '^(.*)$',
     }

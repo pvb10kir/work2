@@ -2,17 +2,14 @@ local function do_keyboard_panel()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
-    					{text = 'Unblock User', callback_data = '/unblock'},
+    					{text = 'Unblock User', callback_data = '/unblock (%d+)'},
     					},
     					{
-    					{text = 'Block User', callback_data = '/block'},
+    					{text = 'Block User', callback_data = '/block (%d+)'},
     					},
-    					{
-	    {
-	    {text = '🔙Back', callback_data = '!home'}
-        }
+  
     }
-		}
+	}	
     return keyboard
 end
 local function do_keyboard_endchat()
@@ -119,8 +116,7 @@ end
 end
 end
 if blocks[1] == 'panel' then
-local user_id = blocks[2]
-api.sendKeyboard('-1001098211185', 'پنل کاربر مورد نظر ' ,do_keyboard_panel(), true)
+api.sendKeyboard('-1001098211185', 'User Panel:' ,do_keyboard_panel(), true)
 end
 if blocks[1] == 'unblock' then
 if msg.reply and msg.reply.forward_from and msg.chat.type == 'supergroup' and msg.chat.id == -1001098211185 and not blocks[2] then

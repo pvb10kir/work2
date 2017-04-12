@@ -5,7 +5,6 @@ local function do_keyboard_panel()
     					{text = 'Unblock User', callback_data = '/unblock (%d+)'},
     					},
     					{
-    		    		{
     					{text = 'Block User', callback_data = '/block (%d+)'},
     					},
     					{

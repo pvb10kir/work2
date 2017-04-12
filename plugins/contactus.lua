@@ -160,7 +160,7 @@ triggers = {
 	'^/(endwith) (%d+)$',
 	'^###cb:/(chat)',
 	'^###cb:/(chat)',
-	 '^/(panel) (%d+)$',
+	 '^/(panel)$',
 	'^###cb:/(end)',
     '^(.*)$',
     }

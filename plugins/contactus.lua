@@ -151,6 +151,8 @@ return {
 triggers = {
     '^/(unblock) (%d+)$',
     '^/(block) (%d+)$',
+    '^###cb:/(unblock) (%d+)$',
+    '^###cb:/(block) (%d+)$',
     '^/(unblock)$',
     '^/(block)$',
     '^/(chat)$',
@@ -159,6 +161,7 @@ triggers = {
     '^/(send) (.*) (%d+)$',
 	'^/(chatwith) (%d+)$',
 	'^/(endwith) (%d+)$',
+	'^###cb:/(chat)',
 	'^###cb:/(chat)',
 	 '^/(panel) (%d+)$',
 	'^###cb:/(end)',

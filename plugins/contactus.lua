@@ -8,8 +8,7 @@ local function do_keyboard_panel()
     					{text = 'Block User', callback_data = '/block (%d+)'},
     					},
   
-    }
-	}	
+    }	
     return keyboard
 end
 local function do_keyboard_endchat()

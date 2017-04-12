@@ -148,8 +148,8 @@ return {
 triggers = {
     '^/(unblock) (%d+)$',
     '^/(block) (%d+)$',
-    '^###cb:/(unblock)$',
-    '^###cb:/(block)$',
+    '^###cb:/(unblock) (%d+)$',
+    '^###cb:/(block) (%d+)$',
     '^/(unblock)$',
     '^/(block)$',
     '^/(chat)$',

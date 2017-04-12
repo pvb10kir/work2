@@ -12,6 +12,7 @@ local function do_keyboard_panel()
 	    {text = '🔙Back', callback_data = '!home'}
         }
     }
+		}
     return keyboard
 end
 local function do_keyboard_endchat()

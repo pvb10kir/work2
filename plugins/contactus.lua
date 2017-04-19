@@ -31,11 +31,20 @@ end
     local wtf = db:ttl("chat:"..msg.chat.id)
  api.sendMessage(msg.chat.id, 'شما به تازگی چت ایجاد کرده اید\n*'..wtf..'* ثانیه دیگر امتحان کنید.', true)
 else
+local msg_id = msg.message_id
+local user_id = msg.chat.id
+local hash = 'pm:user'
+local chat_info = db:hget(hash,user_id)
+if blocks[1] == 'chat' then
+if chat_info == 'block' then 
+ api.sendMessage(msg.chat.id, ':)', true) 
+end
 db:setex("chat:"..msg.chat.id, 60, 'true')
 db:hset(hash, user_id, 'true')
  api.sendMessage(msg.chat.id, '`چت اغاز شد`\n`تمامی پیام ارسال میشود`', true)
  api.sendMessage('-1001098211185', '`کاربر '..user_id..' چت را آغاز کرد.`', true)
  end
+end
  end
 if blocks[1] == 'chatwith' then
 	db:hset(hash, blocks[2], 'true')

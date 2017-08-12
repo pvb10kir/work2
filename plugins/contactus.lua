@@ -22,6 +22,7 @@ local action = function(msg,blocks, ln)
 local msg_id = msg.message_id
 local user_id = msg.chat.id
 local idfsend = -1001098211185-- Your Group For Send User Messages
+local stype = supergroup -- set the type of location for send message ex: supergroup, private, group
 local hash = 'pm:user'
 local chat_info = db:hget(hash,user_id)
 if blocks[1] == 'chat' then
@@ -64,7 +65,7 @@ local user_id = blocks[3]
 api.sendMessage(user_id, 'پیام  : '..blocks[2]..'', true)
 api.sendMessage(idfsend, 'ارسال شد!', true)
 end
-if blocks[1] == 'help' and msg.chat.type == 'supergroup' and msg.chat.id == idfsend then
+if blocks[1] == 'help' and msg.chat.type == stype and msg.chat.id == idfsend then
 local text = [[Hi 
 		*** Bot Admins Help ***
 */block reply|userid
@@ -83,14 +84,14 @@ GOODLUCK*]]
 api.sendMessage(msg.chat.id, text, true)
 end
 if blocks[1] == 'block' then
-if msg.reply and msg.reply.forward_from and msg.chat.type == 'supergroup' and msg.chat.id == idfsend and not blocks[2] then
+if msg.reply and msg.reply.forward_from and msg.chat.type == stype and msg.chat.id == idfsend and not blocks[2] then
 msg = msg.reply
 local user_id = msg.forward_from.id
  db:hset(hash, user_id, 'block')
 api.sendMessage(msg.chat.id, '`بلاک شد. '..user_id..' کاربر!`', true) 
 api.sendMessage(user_id, '`- متاسفم`\n`داخل این بات بلاک شدی`\n`چت تمام شد!`', true) 
 else
- if msg.chat.type == 'supergroup' and msg.chat.id == idfsend then
+ if msg.chat.type == stype and msg.chat.id == idfsend then
  if msg.reply then return nil end
 local user_id = blocks[2]
  db:hset(hash, user_id, 'block')
@@ -100,14 +101,14 @@ end
 end
 end
 if blocks[1] == 'unblock' then
-if msg.reply and msg.reply.forward_from and msg.chat.type == 'supergroup' and msg.chat.id == idfsend and not blocks[2] then
+if msg.reply and msg.reply.forward_from and msg.chat.type == stype and msg.chat.id == idfsend and not blocks[2] then
 msg = msg.reply
 local user_id = msg.forward_from.id
  db:hset(hash, user_id, 'false')
 api.sendMessage(msg.chat.id, '`از بلاک خارج شد. '..user_id..' کاربر`', true) 
 api.sendMessage(user_id, '`شما انبلاک شدید و قابلیت چت کردن دارید`', true) 
 else
- if msg.chat.type == 'supergroup' and msg.chat.id == idfsend then
+ if msg.chat.type == stype and msg.chat.id == idfsend then
   if msg.reply then return nil end
 local user_id = blocks[2]
  db:hset(hash, user_id, 'false')
@@ -116,7 +117,7 @@ api.sendMessage(user_id, '`شما انبلاک شدید و قابلیت چت ک�
 end 
 end
 end
-    if msg.reply and msg.reply.forward_from and msg.chat.type == 'supergroup' and msg.chat.id == idfsend then
+    if msg.reply and msg.reply.forward_from and msg.chat.type == stype and msg.chat.id == idfsend then
    msg = msg.reply_to_message
     local receiver = msg.forward_from.id
     local input = blocks[1]

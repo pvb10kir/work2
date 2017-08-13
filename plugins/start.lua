@@ -15,15 +15,15 @@ local function do_keyboard_robot()
     }
     return keyboard
 end
-local function do_keyboard_buygroup()
+local function do_keyboard_date()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = 'AntiSpam Training📦', url = 'http://telegram.me/create_antispam_bot'},
-    		    		{text = 'More training', url = 'https://telegram.me/spheroch'},
+    		    		{text = 'Refresh🔄', callback_data = '!date'},
 	    },
+	
 	    {
-	    {text = '🔙Back', callback_data = '!robot'}
+	    {text = '🔙Back', callback_data = '!home'}
         }
     }
     return keyboard
@@ -36,6 +36,9 @@ local function do_keyboard_private()
         },
   {
 	        {text = '🔥شماره بنده🔮', callback_data = '!share'},
+        },
+ {
+	        {text = '🔥ساعت و تاریخ🔮', callback_data = '!date'},
         },
 	--[[	{
 				{text = '�برای خرید ربات کلیک کنید�', url = 'https://telegram.me/sphero_ch'},
@@ -95,6 +98,14 @@ local action = function(msg, blocks, ln)
             local keyboard = do_keyboard_channel()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
+	if query == 'date' then
+	local url , res = http.request('http://api.blacklife-team.ir/time/')
+	if res ~= 200 then return "No connection" end
+	local jdat = json:decode(url)
+	local text = 'Time | ساعت : '..jdat.result.time..'\nDate | تاریخ : '..jdat.result.date..'\n@BlacklifeTM'
+	 local keyboard = do_keyboard_date()
+        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+		end
 if query == 'robot' then
             local text = [[اسفرو رباتی امن برای گروه های شما است
 بصورت کاملا رایگان فقط کافیست از همین بخش گزینه

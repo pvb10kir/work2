@@ -149,6 +149,7 @@ return {
 '^###cb:!(buygroup)',
 	   '^###cb:!(channel)',
 	    '^###cb:!(robot)',
+	'^###cb:!(date)',
 	    '^###cb:!(share)',
 
     }

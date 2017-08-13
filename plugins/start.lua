@@ -37,9 +37,9 @@ local function do_keyboard_private()
   {
 	        {text = '🔥شماره بنده🔮', callback_data = '!share'},
         },
- {
-	        {text = '🔥ساعت و تاریخ🔮', callback_data = '!date'},
-        },
+-- {
+--	        {text = '🔥ساعت و تاریخ🔮', callback_data = '!date'},
+  --      },
 	--[[	{
 				{text = '�برای خرید ربات کلیک کنید�', url = 'https://telegram.me/sphero_ch'},
 	    },]]

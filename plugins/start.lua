@@ -98,6 +98,7 @@ local action = function(msg, blocks, ln)
             local keyboard = do_keyboard_channel()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
+
 	if query == 'date' then
 	local url , res = http.request('http://api.blacklife-team.ir/time/')
 	if res ~= 200 then return "No connection" end
@@ -106,6 +107,18 @@ end
 	 local keyboard = do_keyboard_date()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 		end
+	local url , res = https.request('https://api.telegram.org/bot406975381:AAFPCe756NYODvvlb9801mXr1UU4gMVfqtM/getchatmember?chat_id=-1001134110205&user_id='..msg.chat.id..' ')
+if res ~= 200 then
+  return "No connection"
+end
+local jdat = json:decode(url)
+if jdat.result.status == "left" or jdat.result.status == "kicked" or not jdat.ok then
+  api.sendMessage(msg.chat.id, "سلام دوست عزیز به نظر میرسد که در کانال ربات عضو نیستید پس از شما تقاضا میشود که در کانال جوین شوید\nبرای جوین شدن لینک زیر را کلیک کنید\nhttps://telegram.me/joinchat/DWQPej_1dbViXxXb9dfF1g", true)
+  print('\27[36mNot valid: Channel not found\27[39m')
+
+  return false
+end
+
 if query == 'robot' then
             local text = [[اسفرو رباتی امن برای گروه های شما است
 بصورت کاملا رایگان فقط کافیست از همین بخش گزینه

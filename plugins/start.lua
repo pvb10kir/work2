@@ -145,8 +145,6 @@ end
 			end
     end
 
-end
-
 return {
 	action = action,
 	triggers = {

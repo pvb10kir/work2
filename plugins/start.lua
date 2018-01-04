@@ -129,7 +129,8 @@ if query == 'e' then
 			مجرد
 			25 ساله
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.
-			http://www.uupload.ir/files/9eaa_img_20180104_230203_714.jpg]]
+	برای مشاهده عکس روی لینک زیر کلیک کنید👇🏻👇🏻
+goo.gl/Wu9vpr]]
             local keyboard = do_keyboard_e()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
@@ -144,7 +145,8 @@ if query == 'b' then
 			مجرد
 			21 ساله
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.
-			http://www.uupload.ir/files/1ovt_img_20180104_230207_004.jpg]]
+			برای مشاهده عکس روی لینک زیر کلیک کنید👇🏻👇🏻
+goo.gl/pXmnfa]]
             local keyboard = do_keyboard_b()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end

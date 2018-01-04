@@ -20,9 +20,6 @@ local function do_keyboard_next()
 {
     		    		{text = 'خرید و فعالسازی برنامه🔞', callback_data = '!act'},
 	    },
-	    {
-	    {text = '🔙Back', callback_data = '!home'}
-        }
     }
     return keyboard
 end
@@ -129,8 +126,8 @@ if query == 'e' then
 			مجرد
 			25 ساله
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.
-	برای مشاهده عکس روی لینک زیر کلیک کنید👇🏻👇🏻
-goo.gl/Wu9vpr]]
+	 مشاهده عکس👇🏻👇🏻
+https://goo.gl/Wu9vpr]]
             local keyboard = do_keyboard_e()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
@@ -145,8 +142,8 @@ if query == 'b' then
 			مجرد
 			21 ساله
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.
-			برای مشاهده عکس روی لینک زیر کلیک کنید👇🏻👇🏻
-goo.gl/pXmnfa]]
+			مشاهده عکس👇🏻👇🏻
+https://goo.gl/pXmnfa]]
             local keyboard = do_keyboard_b()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end

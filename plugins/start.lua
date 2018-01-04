@@ -30,7 +30,7 @@ local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
     {
-	        {text = '♨️نوضیحات♨️', callback_data = '!next'},
+	        {text = '♨️توضیحات♨️', callback_data = '!next'},
         },
 	}		
     return keyboard
@@ -42,6 +42,24 @@ local function do_keyboard_startme()
     	{
     		{text = '📥click', url = 'https://telegram.me/'..bot.username}
 	    }
+    }
+    return keyboard
+end
+local function do_keyboard_a()
+    local keyboard = {}
+    keyboard.inline_keyboard = {
+	    {
+	    {text = '🔙بازگشت', callback_data = '!list'}
+        }
+    }
+    return keyboard
+end
+local function do_keyboard_b()
+    local keyboard = {}
+    keyboard.inline_keyboard = {
+	    {
+	    {text = '🔙بازگشت', callback_data = '!list'}
+        }
     }
     return keyboard
 end

@@ -2,7 +2,7 @@ local function do_keyboard_list()
     local keyboard = {}
     keyboard.inline_keyboard = {
     					{
-    		    		{text = 'کد 33✅', callback_data = '!a'},
+    		    		{text = 'کد 33✅', callback_data = '!e'},
 {text = 'کد 112✅', callback_data = '!b'},
 },
 	    {
@@ -45,7 +45,7 @@ local function do_keyboard_startme()
     }
     return keyboard
 end
-local function do_keyboard_a()
+local function do_keyboard_e()
     local keyboard = {}
     keyboard.inline_keyboard = {
 	    {
@@ -124,13 +124,13 @@ if query == 'next' then
             local keyboard = do_keyboard_next()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'a' then
+if query == 'e' then
             local text = [[#کد33
 			مجرد
 			25 ساله
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.
-			goo.gl/Wu9vpr]]
-            local keyboard = do_keyboard_a()
+			http://www.uupload.ir/files/9eaa_img_20180104_230203_714.jpg]]
+            local keyboard = do_keyboard_e()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'act' then
@@ -144,7 +144,7 @@ if query == 'b' then
 			مجرد
 			21 ساله
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.
-			goo.gl/pXmnfa]]
+			http://www.uupload.ir/files/1ovt_img_20180104_230207_004.jpg]]
             local keyboard = do_keyboard_b()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
@@ -160,7 +160,7 @@ return {
 	    '^/(start)$',
 	    '^###cb:!(next)',
 '^###cb:!(list)',
-	   '^###cb:!(a)',
+	   '^###cb:!(e)',
 	    '^###cb:!(b)',
 		    '^###cb:!(act)',
     }

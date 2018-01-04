@@ -130,18 +130,19 @@ local caption = [[#کد33
 end
 if query == 'act' then
             local text = [[سلام به قسمت خرید برنامه خوش اومدید
-			توجه کنید که این خرید توسط درگاه امن بانک تجارت صورت میگیرد و بعد از پرداخت برنامه به صورت خودکار توسط ربات برای شما فرستاده میشود برای انتقال به درگاه روی دکمه ی زیر کلیک کنید و عملیات پرداخت را کامل کنید تا هرچه زودتر صیغه ی مناسب خود را پیدا کنید.]]
+			
+			توجه کنید که این خرید توسط درگاه امن بانک تجارت صورت میگیرد و بعد از پرداخت برنامه به صورت خودکار توسط ربات برای شما فرستاده میشود برای انتقال به درگاه روی دکمه ی زیر کلیک کنید و عملیات پرداخت را کامل کنید تا هرچه زودتر صیغه ی مناسب خود را پیدا کنید
+			
+			وجه ده هزارتومن رو از طریق درگاه ذیل بفرمایید.👇]]
             local keyboard = do_keyboard_act()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'b' then
-            local text = [[http://goo.gl/pXmnfa
-			#کد112
+            local caption = [[#کد112
 			مجرد
 			21 ساله
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.]]
-            local keyboard = do_keyboard_b()
-        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+ api.sendPhoto(msg.chat.id, "/home/apis/work/2.jpg", caption, 0)
 end
         if query == 'share' then
      api.sendContact(msg.from.id, '+989309649221', '🔸~[S]epehr')

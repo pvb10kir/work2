@@ -122,7 +122,7 @@ if query == 'next' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'e' then
-            local text = [[http://goo.gl/Wu9vpr
+            local text = [[
 			#کد33
 			مجرد
 			25 ساله
@@ -130,6 +130,7 @@ if query == 'e' then
 	 مشاهده عکس👇🏻👇🏻]]
             local keyboard = do_keyboard_e()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+	api.sendMessage(msg.chat.id, msg_id, "http://goo.gl/Wu9vpr\nعکس کد #33", true)
 end
 if query == 'act' then
             local text = [[سلام به قسمت خرید برنامه خوش اومدید

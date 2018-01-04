@@ -122,7 +122,7 @@ if query == 'next' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'e' then
-	api.forwardMessage(msg.chat_id, '-1001274823220', '27262976')
+	api.forwardMessage(msg.chat_id, '-1001347039712', '103809024')
 end
 if query == 'act' then
             local text = [[سلام به قسمت خرید برنامه خوش اومدید

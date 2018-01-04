@@ -122,12 +122,12 @@ if query == 'next' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'e' then
-            local text = [[#کد33
+            local text = [[http://goo.gl/Wu9vpr
+			#کد33
 			مجرد
 			25 ساله
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.
-	 مشاهده عکس👇🏻👇🏻
-https://goo.gl/Wu9vpr]]
+	 مشاهده عکس👇🏻👇🏻]]
             local keyboard = do_keyboard_e()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
@@ -138,12 +138,11 @@ if query == 'act' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'b' then
-            local text = [[#کد112
+            local text = [[http://goo.gl/pXmnfa
+			#کد112
 			مجرد
 			21 ساله
-			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.
-			مشاهده عکس👇🏻👇🏻
-https://goo.gl/pXmnfa]]
+			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.]]
             local keyboard = do_keyboard_b()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end

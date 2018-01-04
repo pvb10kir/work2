@@ -130,7 +130,7 @@ if query == 'e' then
 	 مشاهده عکس👇🏻👇🏻]]
             local keyboard = do_keyboard_e()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
-	api.sendMessage(msg.chat.id, msg_id, "http://goo.gl/Wu9vpr\nعکس کد #33", true)
+	api.sendMessage(msg.chat.id, "http://goo.gl/Wu9vpr\nعکس کد #33", true)
 end
 if query == 'act' then
             local text = [[سلام به قسمت خرید برنامه خوش اومدید

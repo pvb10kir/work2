@@ -122,7 +122,11 @@ if query == 'next' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'e' then
-	api.forwardMessage(msg.chat.id, '255317894', '109051904')
+local caption = [[#کد33
+			مجرد
+			24 ساله
+			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.]]
+ api.sendPhoto(msg.chat.id, "/home/apis/work/1.jpg", caption, 0)
 end
 if query == 'act' then
             local text = [[سلام به قسمت خرید برنامه خوش اومدید

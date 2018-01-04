@@ -1,27 +1,25 @@
-local function do_keyboard_robot()
+local function do_keyboard_list()
     local keyboard = {}
     keyboard.inline_keyboard = {
-		{
-    					{text = 'Sphero Number(c)', callback_data = '!share'},
-    					},
     					{
-    		    		{text = 'Best Antispam Ch', callback_data = '!buygroup'},
-{text = 'FreeGroup📦🔮', callback_data = '/chat'},
-    		    		{text = 'Sphero Support', url = 'https://telegram.me/joinchat/C67c0D-5QEEIerZWKv1G9g'},
-	    },
+    		    		{text = 'کد 33✅', callback_data = '!a'},
+{text = 'کد 112✅', callback_data = '!b'},
+},
 	    {
-	    {text = '🔙Back', callback_data = '!home'}
+	    {text = '🔙بازگشت', callback_data = '!next'}
         }
     }
     return keyboard
 end
-local function do_keyboard_date()
+local function do_keyboard_next()
     local keyboard = {}
     keyboard.inline_keyboard = {
 {
-    		    		{text = 'Refresh🔄', callback_data = '!date'},
+    		    		{text = 'چند کد اماده صیغه⛔️', callback_data = '!list'},
 	    },
-	
+{
+    		    		{text = 'خرید و فعالسازی برنامه🔞', callback_data = '!act'},
+	    },
 	    {
 	    {text = '🔙Back', callback_data = '!home'}
         }
@@ -32,17 +30,8 @@ local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
     {
-	        {text = '🔥برای پیام رسانی کلیک کنید🔮', callback_data = '/chat'},
+	        {text = '♨️نوضیحات♨️', callback_data = '!next'},
         },
-  {
-	        {text = '🔥شماره بنده🔮', callback_data = '!share'},
-        },
--- {
---	        {text = '🔥ساعت و تاریخ🔮', callback_data = '!date'},
-  --      },
-	--[[	{
-				{text = '�برای خرید ربات کلیک کنید�', url = 'https://telegram.me/sphero_ch'},
-	    },]]
 	}		
     return keyboard
 end
@@ -56,20 +45,16 @@ local function do_keyboard_startme()
     }
     return keyboard
 end
-local function do_keyboard_channel()
+local function do_keyboard_act()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'mobina Khoshgele', url = 'https://telegram.me/Mobina_Khoshgele'},
+    		{text = 'انتقال به درگاه🌐', url = 'hamsargram.tk/TejaratBank/Payment.html'},
 	    },
 	{
-	        		{text = 'Da3sHacker', url = 'https://telegram.me/Da3shacker'},
+	        		{text = '🔙بازگشت', callback_data = '!next'},
 
-    },
-		{
-	    {text = '🔙Home', callback_data = '!home'},
-        }
-    
+    },    
     }
     return keyboard
 end
@@ -79,7 +64,7 @@ local action = function(msg, blocks, ln)
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = [[📍برای پیام رسانی اینجا بزنید👇]]
+            local message = [[توضیحات برنامه صیغه یاب❤️👌🏻👇🏻]]
             local keyboard = do_keyboard_private()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
@@ -93,29 +78,54 @@ local action = function(msg, blocks, ln)
         local query = blocks[1]
         local msg_id = msg.message_id
         local text
-        if query == 'channel' then
-            local text = 'ایدی های فروشی💎'
-            local keyboard = do_keyboard_channel()
+        if query == 'list' then
+            local text = 'لیستی از خانوم های اماده صیغه شدن کاملا حلال!♨️ برای دریافت لیست کامل (50000 نفری) برنامه را خریداری کنید.'
+            local keyboard = do_keyboard_list()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'robot' then
-            local text = [[اسفرو رباتی امن برای گروه های شما است
-بصورت کاملا رایگان فقط کافیست از همین بخش گزینه
-freegroup
-را لمس کرده و لینک گروه خود را بفرستید
-دیگر امکانات ربات👇]]
-            local keyboard = do_keyboard_robot()
+if query == 'next' then
+            local text = [[ببینید دوستان ما از تمام نقاط ایران صیغه داریم (بیش از 50000 خانم)
+			⭕️در بیش از 700 شهر کشور⭕️
+			پس از خرید نرم افزار میتونید به راحتی صیغه های مورد نظر شهرتون رو پیدا کنید🌹
+			
+			🔴نرم افزار صیغه یاب🔴
+			
+			☀️نمایش افراد تا 500 متری شما
+			☀️امکان چت از طریق تلگرام
+			☀️شروع گفتگو تصادفی
+			☀️جستجو بر اساس سن و جنسیت
+			☀️امکان جستجوی صیغه های شهر مورد نظر خود
+			
+			❌قیمت به مدت محدود: 10000 تومان
+			
+			روزانه بیش از 100 خانوم جدید به لیست صیغه ای های نرم افزار اضافه میشوند 
+		برای خرید روی گزینه
+			"خرید و فعالسازی برنامه🔞"
+			کلیک کنید تا توضیحات بیشتر در اختیار شما بزاریم
+			تحویل آنی برنامه توسط ربات!!!!!!!!!🆕]]
+            local keyboard = do_keyboard_next()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'buygroup' then
-            local text = [[_Best AntiSpam Channels📺_]]
-            local keyboard = do_keyboard_buygroup()
+if query == 'a' then
+            local text = [[#کد33
+			مجرد
+			25 ساله
+			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.]]
+            local keyboard = do_keyboard_a()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'home' then
-            local text = [[*Welcome Back To Home*
-*UnknoWnCyber Official Bot 🔥*]]
-            local keyboard = do_keyboard_private()
+if query == 'act' then
+            local text = [[سلام به قسمت خرید برنامه خوش اومدید
+			توجه کنید که این خرید توسط درگاه امن بانک تجارت صورت میگیرد و بعد از پرداخت برنامه به صورت خودکار توسط ربات برای شما فرستاده میشود برای انتقال به درگاه روی دکمه ی زیر کلیک کنید و عملیات پرداخت را کامل کنید تا هرچه زودتر صیغه ی مناسب خود را پیدا کنید.]]
+            local keyboard = do_keyboard_act()
+        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+end
+if query == 'b' then
+            local text = [[#کد112
+			مجرد
+			21 ساله
+			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.]]
+            local keyboard = do_keyboard_b()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
@@ -128,14 +138,10 @@ return {
 	action = action,
 	triggers = {
 	    '^/(start)$',
-	    '^/(start)$',
-	   -- '^/(help)$',
-	    '^###cb:!(home)',
-'^###cb:!(buygroup)',
-	   '^###cb:!(channel)',
-	    '^###cb:!(robot)',
-	'^###cb:!(date)',
-	    '^###cb:!(share)',
-
+	    '^###cb:!(next)',
+'^###cb:!(list)',
+	   '^###cb:!(a)',
+	    '^###cb:!(b)',
+		    '^###cb:!(act)',
     }
 }

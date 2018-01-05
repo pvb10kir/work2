@@ -75,7 +75,7 @@ local function do_keyboard_act()
 end
 local action = function(msg, blocks, ln)
 	if blocks[1] == 'start' or blocks[1] == 'help' then
-	db:hset('bot:users', msg.from.id)
+	db:hset('bot:users', msg.from.id, 'xx')
 	db:hincrby('bot:gen', 'users', 1)
         if msg.chat.type == 'private' then
             local message = [[توضیحات برنامه صیغه یاب❤️👌🏻👇🏻]]

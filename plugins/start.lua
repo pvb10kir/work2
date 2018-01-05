@@ -82,7 +82,6 @@ local action = function(msg, blocks, ln)
             local keyboard = do_keyboard_private()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
-		end
 			if msg.chat.type == 'group' or msg.chat.type == 'supergroup' then
           api.sendKeyboard(msg.chat.id, '_Hi _*Send Me Start To Private Message*' ,do_keyboard_startme(), true)
         end

@@ -73,17 +73,10 @@ local function do_keyboard_act()
     }
     return keyboard
 end
-function users(msg) 
-local hash = db:sismember('bot:users', msg.from.id)
-if hash then
-return true
-else
-return false
-end
-end
 local action = function(msg, blocks, ln)
     if blocks[1] == 'start' or blocks[1] == 'help' then
-        db:sadd('bot:users', msg.from.id)
+	db:hset('bot:users', msg.from.id, 'xx')
+	db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
             local message = [[توضیحات برنامه صیغه یاب❤️👌🏻👇🏻]]
             local keyboard = do_keyboard_private()
@@ -95,7 +88,7 @@ local action = function(msg, blocks, ln)
         return
     end
 if blocks[1] == 'status' then
-local users = db:scard('bot:users')
+local users = db:hget('bot:general', 'users')
  api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)
 end
     if msg.cb then

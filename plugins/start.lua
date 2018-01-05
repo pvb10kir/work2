@@ -93,7 +93,7 @@ api.sendMessage(msg.chat.id, 'شما قبلا از \n /start \nاستفاده ک
     end
 if blocks[1] == 'key' then
             local text = 'توضیحات برنامه صیغه یاب❤️👌🏻👇🏻'
-            local keyboard = do_keyboard_key()
+            local keyboard = do_keyboard_private()
         api.sendKeyboard(msg.chat.id, text, keyboard, true)
 end
 if blocks[1] == 'status' then

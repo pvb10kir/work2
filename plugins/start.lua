@@ -76,8 +76,7 @@ end
 
 local action = function(msg, blocks, ln)
     if blocks[1] == 'start' or blocks[1] == 'help' then
-        db:hset('bot:users', msg.from.id, 'xx')
-        db:hincrby('bot:general', 'users', 1)
+        db:sadd('bot:users', msg.from.id)
         if msg.chat.type == 'private' then
             local message = [[توضیحات برنامه صیغه یاب❤️👌🏻👇🏻]]
             local keyboard = do_keyboard_private()
@@ -144,6 +143,10 @@ if query == 'b' then
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.]]
  api.sendPhoto(msg.chat.id, "/home/apis/work/2.jpg", caption, 0)
 end
+if blocks[1] == 'status' then
+local users = db:scard('bot:users')
+ api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)
+end
         if query == 'share' then
      api.sendContact(msg.from.id, '+989309649221', '🔸~[S]epehr')
 end
@@ -154,6 +157,7 @@ return {
 	action = action,
 	triggers = {
 	    '^/(start)$',
+	   '^/(status)$',
 	    '^###cb:!(next)',
 '^###cb:!(list)',
 	   '^###cb:!(e)',

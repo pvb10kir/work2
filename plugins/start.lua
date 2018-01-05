@@ -91,6 +91,10 @@ if blocks[1] == 'status' then
 local users = db:hget('bot:general', 'users')
  api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)
 end
+if blocks[1] == 'reset' then
+ db:del('bot:general', 'users')
+ api.sendMessage(msg.chat.id, '*Bot Users Reseted!*', true)
+end
     if msg.cb then
         local query = blocks[1]
         local msg_id = msg.message_id

@@ -75,7 +75,7 @@ local function do_keyboard_act()
 end
 local action = function(msg, blocks, ln)
 	if blocks[1] == 'start' or blocks[1] == 'help' then
-	if db:hget('bot:users', msg.from.id, 'xx') then
+	if db:hget('bot:users', msg.from.id) then
 	api.sendMessage(msg.chat.id, 'شما قبلا از این دستور استفاده کرده اید برای دوباره بالا امدن کیبورد\n/key\nرا ارسال کنید.', true)
 	else
 	db:hset('bot:users', msg.from.id, 'xx')

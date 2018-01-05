@@ -73,7 +73,14 @@ local function do_keyboard_act()
     }
     return keyboard
 end
-
+function users(msg) 
+local hash = db:sismember('bot:users', msg.from.id)
+if hash then
+return true
+else
+return false
+end
+end
 local action = function(msg, blocks, ln)
     if blocks[1] == 'start' or blocks[1] == 'help' then
         db:sadd('bot:users', msg.from.id)

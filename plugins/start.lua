@@ -74,9 +74,6 @@ local function do_keyboard_act()
     return keyboard
 end
 local action = function(msg, blocks, ln)
-    if blocks[1] == 'start' or blocks[1] == 'help' and db:hget('bot:users', msg.from.id) then
-api.sendMessage(msg.chat.id, 'شما قبلا از \n /start \nاستفاده کردید برای دوباره بالا اومدن کیبورد اولیه\n/key\nرا وارد کنید', true)
-    else
 	if blocks[1] == 'start' or blocks[1] == 'help' then
 	db:hset('bot:users', msg.from.id)
 	db:hincrby('bot:gen', 'users', 1)
@@ -91,11 +88,6 @@ api.sendMessage(msg.chat.id, 'شما قبلا از \n /start \nاستفاده ک
         end
         return
     end
-if blocks[1] == 'key' then
-            local text = 'توضیحات برنامه صیغه یاب❤️👌🏻👇🏻'
-            local keyboard = do_keyboard_private()
-        api.sendKeyboard(msg.from.id, text, keyboard, true)
-end
 if blocks[1] == 'status' then
 local users = db:hget('bot:gen', 'users')
  api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)
@@ -171,7 +163,6 @@ return {
 	    '^/(start)$',
 	    '^/(reset)$',
 	   '^/(status)$',
-		   '^/(key)$',
 	    '^###cb:!(next)',
 '^###cb:!(list)',
 	   '^###cb:!(e)',

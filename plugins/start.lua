@@ -76,7 +76,7 @@ end
 local action = function(msg, blocks, ln)
     if blocks[1] == 'start' or blocks[1] == 'help' then
 	db:hset('bot:users', msg.from.id, 'xx')
-	db:hincrby('bot:general', 'users', 1)
+	db:hincrby('bot:gen', 'users', 1)
         if msg.chat.type == 'private' then
             local message = [[توضیحات برنامه صیغه یاب❤️👌🏻👇🏻]]
             local keyboard = do_keyboard_private()
@@ -88,11 +88,11 @@ local action = function(msg, blocks, ln)
         return
     end
 if blocks[1] == 'status' then
-local users = db:hget('bot:general', 'users')
+local users = db:hget('bot:gen', 'users')
  api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)
 end
 if blocks[1] == 'reset' then
- db:del('bot:general', 'users')
+ db:del('bot:gen', 'users')
  api.sendMessage(msg.chat.id, '*Bot Users Reseted!*', true)
 end
     if msg.cb then

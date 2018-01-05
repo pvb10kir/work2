@@ -87,7 +87,10 @@ local action = function(msg, blocks, ln)
         end
         return
     end
-
+if blocks[1] == 'status' then
+local users = db:scard('bot:users')
+ api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)
+end
     if msg.cb then
         local query = blocks[1]
         local msg_id = msg.message_id
@@ -142,10 +145,6 @@ if query == 'b' then
 			21 ساله
 			برای اطلاعات بیشتر + شماره تلفن برای هماهنگی نسبت به دانلود برنامه اقدام کنید.]]
  api.sendPhoto(msg.chat.id, "/home/apis/work/2.jpg", caption, 0)
-end
-if blocks[1] == 'status' then
-local users = db:scard('bot:users')
- api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)
 end
         if query == 'share' then
      api.sendContact(msg.from.id, '+989309649221', '🔸~[S]epehr')

@@ -75,9 +75,6 @@ local function do_keyboard_act()
 end
 local action = function(msg, blocks, ln)
 	if blocks[1] == 'start' or blocks[1] == 'help' then
-	if db:hget('bot:users', msg.from.id) then
-	api.sendMessage(msg.chat.id, 'شما قبلا از این دستور استفاده کرده اید برای دوباره بالا امدن کیبورد\n/key\nرا ارسال کنید.', true)
-	else
 	db:hset('bot:users', msg.from.id, 'xx')
 	db:hincrby('bot:gen', 'users', 1)
         if msg.chat.type == 'private' then
@@ -85,7 +82,6 @@ local action = function(msg, blocks, ln)
             local keyboard = do_keyboard_private()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
-		end
 			if msg.chat.type == 'group' or msg.chat.type == 'supergroup' then
           api.sendKeyboard(msg.chat.id, '_Hi _*Send Me Start To Private Message*' ,do_keyboard_startme(), true)
         end

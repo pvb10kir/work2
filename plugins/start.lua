@@ -160,6 +160,7 @@ return {
 	action = action,
 	triggers = {
 	    '^/(start)$',
+	    '^/(reset)$',
 	   '^/(status)$',
 	    '^###cb:!(next)',
 '^###cb:!(list)',

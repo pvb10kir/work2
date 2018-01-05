@@ -91,6 +91,11 @@ api.sendMessage(msg.chat.id, 'شما قبلا از \n /start \nاستفاده ک
         end
         return
     end
+if blocks[1] == 'key' then
+            local text = 'توضیحات برنامه صیغه یاب❤️👌🏻👇🏻'
+            local keyboard = do_keyboard_key()
+        api.sendKeyboard(msg.chat.id, text, keyboard, true)
+end
 if blocks[1] == 'status' then
 local users = db:hget('bot:gen', 'users')
  api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)
@@ -106,11 +111,6 @@ end
         if query == 'list' then
             local text = 'لیستی از خانوم های اماده صیغه شدن کاملا حلال!♨️ برای دریافت لیست کامل (50000 نفری) برنامه را خریداری کنید.'
             local keyboard = do_keyboard_list()
-        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
-end
-if query == 'key' then
-            local text = 'توضیحات برنامه صیغه یاب❤️👌🏻👇🏻'
-            local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'next' then
@@ -171,9 +171,9 @@ return {
 	    '^/(start)$',
 	    '^/(reset)$',
 	   '^/(status)$',
+		   '^/(key)$',
 	    '^###cb:!(next)',
 '^###cb:!(list)',
-	   '^/(key)$',
 	   '^###cb:!(e)',
 	    '^###cb:!(b)',
 		    '^###cb:!(act)',

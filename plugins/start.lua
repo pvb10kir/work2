@@ -74,14 +74,18 @@ local function do_keyboard_act()
     return keyboard
 end
 local action = function(msg, blocks, ln)
-    if blocks[1] == 'start' or blocks[1] == 'help' then
-	db:hset('bot:users', msg.from.id, 'xx')
+    if blocks[1] == 'start' or blocks[1] == 'help' and db:hget('bot:users', msg.from.id) then
+api.sendMessage(msg.chat.id, 'شما قبلا از \n /start \nاستفاده کردید برای دوباره بالا اومدن کیبورد اولیه\n/key\nرا وارد کنید', true)
+    else
+	if blocks[1] == 'start' or blocks[1] == 'help' then
+	db:hset('bot:users', msg.from.id)
 	db:hincrby('bot:gen', 'users', 1)
         if msg.chat.type == 'private' then
             local message = [[توضیحات برنامه صیغه یاب❤️👌🏻👇🏻]]
             local keyboard = do_keyboard_private()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
+		end
 			if msg.chat.type == 'group' or msg.chat.type == 'supergroup' then
           api.sendKeyboard(msg.chat.id, '_Hi _*Send Me Start To Private Message*' ,do_keyboard_startme(), true)
         end
@@ -102,6 +106,11 @@ end
         if query == 'list' then
             local text = 'لیستی از خانوم های اماده صیغه شدن کاملا حلال!♨️ برای دریافت لیست کامل (50000 نفری) برنامه را خریداری کنید.'
             local keyboard = do_keyboard_list()
+        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+end
+if query == 'key' then
+            local text = 'توضیحات برنامه صیغه یاب❤️👌🏻👇🏻'
+            local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'next' then
@@ -164,6 +173,7 @@ return {
 	   '^/(status)$',
 	    '^###cb:!(next)',
 '^###cb:!(list)',
+	   '^/(key)$',
 	   '^###cb:!(e)',
 	    '^###cb:!(b)',
 		    '^###cb:!(act)',

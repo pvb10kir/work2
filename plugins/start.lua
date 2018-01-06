@@ -86,6 +86,8 @@ if db:get("bot:users") == tostring(msg.from.id) then
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
 end
+return
+		end
 if blocks[1] == 'status' then
 local users = db:hget('bot:gen', 'users')
  api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)

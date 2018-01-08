@@ -324,8 +324,8 @@ end
         local query = blocks[1]
         local msg_id = msg.message_id
         local text
-	if blocks[1] == 'next' then
-local message = [[سلام، خواهشا نوع شارژ خود را انتخاب نمایید.👇🏻]]
+	if query == 'next' then
+local text = [[سلام، خواهشا نوع شارژ خود را انتخاب نمایید.👇🏻]]
             local keyboard = do_keyboard_next()
 	api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end

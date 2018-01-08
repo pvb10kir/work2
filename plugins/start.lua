@@ -341,7 +341,7 @@ if query == 'code' then
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'zdc' then
-local caption = [[لطفا مبلغ شارژ را انتخاب کنید👇🏻
+local text = [[لطفا مبلغ شارژ را انتخاب کنید👇🏻
 ((تخفیف ویژه))]]
 local keyboard = do_keyboard_zdc()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)

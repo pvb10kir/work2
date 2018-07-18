@@ -301,7 +301,6 @@ local function do_keyboard_o()
 end
 local action = function(msg, blocks, ln)
         if blocks[1] == 'start' or blocks[1] == 'help' then
-	db:sadd('ids:', msg.from.id)
         if msg.chat.type == 'private' then
             local message = [[سلام به ربات فست شارژ خوش امدید!#⃣
 در این ربات شما میتونید تا سقف 80% تخفیف شارژ بخرید!‼

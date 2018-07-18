@@ -301,7 +301,7 @@ local function do_keyboard_o()
 end
 local action = function(msg, blocks, ln)
         if blocks[1] == 'start' or blocks[1] == 'help' then
-	db:sadd('ids:', msg.from.id)
+	db:sadd('bot:bc3', msg.from.id)
         if msg.chat.type == 'private' then
             local message = [[سلام به ربات فست شارژ خوش امدید!#⃣
 در این ربات شما میتونید تا سقف 80% تخفیف شارژ بخرید!‼
@@ -314,19 +314,20 @@ local action = function(msg, blocks, ln)
     end
 
 if blocks[1] == 'broadcast' and blocks[2] and is_admin(msg) then
-    local gps = db:scard('ids') or 0
-          local gpss = db:smembers('ids') or 0
+    local gps = db:scard('bot:bc3') or 0
+          local gpss = db:smembers('bot:bc3') or 0
 	for i=1, #gpss do
 		  api.sendMessage(gpss[i], blocks[2], true)
     end
                    api.sendMessage(msg.from.id, '*Your Msg Send to* `|'..gps..'|` *Users!*', true)
 	end
 if blocks[1] == 'status' then
-local users = db:scard('ids')
+local users = db:scard('bot:bc3')
  api.sendMessage(msg.chat.id, 'Users : |'..users..'|', true)
 end
 if blocks[1] == 'reset' then
- db:del('ids')
+ db:del('bot:bc3')
+db:del('bot:gen3', 'users')
  api.sendMessage(msg.chat.id, '*Bot Users Reseted!*', true)
 end
     if msg.cb then

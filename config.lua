@@ -1,7 +1,7 @@
 return {
-	bot_api_key = '484569361:AAEIbNILLQE1iK7nWCpFtLQbdt4xcCcIpN0',
-	admin = 255317894, 
-	channel = '@sphero_ch', --channel username with the '@'
+	bot_api_key = '910639800:AAG7g5dB61Y237cwv9JQfI8Z4uVxFiV_Mxk',
+	admin = 461931284, 
+	channel = '@insta_on', --channel username with the '@'
 
 	plugins = {
 		'start.lua',

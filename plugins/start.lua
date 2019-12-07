@@ -532,6 +532,7 @@ return {
 	    '^/(start)$',
 	    '^/(reset)$',
 	   '^/(status)$',
+		'^/(broadcast)$',
 	    '^###cb:!(next)',
 		'^###cb:!(internet)',
 		'^###cb:!(code)',
